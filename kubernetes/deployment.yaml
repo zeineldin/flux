@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flux-deployment
+  namespace:flux-demo
+  labels:
+    app: flux
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/tag.flux: semver:~1.0.0
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: flux
+  template:
+    metadata:
+      labels:
+        app: flux
+    spec:
+      containers:
+      - name: flux
+        image: mzain/flux:1.0.2
+        ports:
+        - name: tomcat-port
+          containerPort: 8080
