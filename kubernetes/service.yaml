@@ -7,6 +7,6 @@ spec:
   ports:
   - port: 8080
     name: tomcat-port
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: flux
