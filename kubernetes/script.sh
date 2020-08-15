@@ -1,5 +1,6 @@
 #!/bin/bash
 set -x 
+kubectl create ns flux
 export GITHUB_USER="zeineldin"
 
 fluxctl install \
