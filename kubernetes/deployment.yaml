@@ -10,7 +10,7 @@ metadata:
     fluxcd.io/automated: "true"
     fluxcd.io/tag.flux: semver:~1.0.0
 spec:
-  replicas: 3
+  replicas: 2
   strategy:
     rollingUpdate:
       maxUnavailable: 0
