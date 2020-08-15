@@ -28,4 +28,4 @@ spec:
         image: mzain/flux:1.0.8
         ports:
         - name: tomcat-port
-          containerPort: 8080
+          containerPort: 80
